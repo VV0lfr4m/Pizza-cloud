@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pizza Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+<body>
+<h1>Cart</h1>
+<img th:src="@{/images/PizzaCloud.png}"/>
+<form method="POST" th:object="${orders}">
+
+    <div class="grid">
+        <div class="ingredient-group" id="dough">
+            <div th:each="order : ${orders}"><!--cart.getOrders()-->
+                <input name="order" type="checkbox" th:value="${order}"/>
+                <span th:text="${order.id}">Order</span>
+                <div th:each="design : ${order.getDesigns()}">
+                    <span th:text="${design.name}">Name</span><br/>
+                    <span th:each="ingredient : ${design.ingredients}"><br/>
+                        <span th:text="${ingredient.name}"></span>Ingredients</span><br/>
+                </div><br/>
+            </div>
+        </div>
+
+        <br/>
+        <button>Buy</button>
+        <button th:action="@{/delete}">Delete</button>
+        <button>Add</button>
+    </div>
+
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+</form>
+<form method="POST" th:action="@{/logout}">
+    <input type="submit" value="Logout"/>
+</form>
+</body>
+</html>

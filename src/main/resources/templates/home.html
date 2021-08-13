@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pizza Cloud</title>
+</head>
+<body>
+<h1>Welcome to...</h1>
+<h2>Pizza Cloud</h2>
+<img th:src="@{/images/PizzaCloud.png}" width="400" height="300" alt="LOGO img"/>
+<div>
+    <a th:href="@{/design}">Create design</a>
+</div>
+<div>
+    <a th:href="@{/cart}">Go to the cart</a>
+</div>
+<div>
+    <a th:href="@{/home}">Go home</a>
+</div>
+<div>
+    <a th:href="@{/login}">Login</a>
+</div>
+<form method="POST" th:action="@{/logout}">
+    <input type="submit" value="Logout"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,11 @@
+#this is a profile-specific config file, also there is can be used application-[some name].properties
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/pizzacloud
+    username: pizzauser
+    password: pizzapassword
+
+logging:
+    level:
+    pizzas: WARN

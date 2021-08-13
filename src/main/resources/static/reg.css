@@ -1,0 +1,16 @@
+div.field {
+    padding-bottom: 15px;
+}
+div.field label {
+    display: block;
+    float: left;
+    width: 70px;
+    height: 15px;
+}
+img {
+    width: 400px;
+    height: 300px;
+}
+span.validationError {
+    color: red;
+}
